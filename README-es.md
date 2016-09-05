@@ -3,7 +3,9 @@
 
 # El Arte del Terminal
 
-[![Join the chat at https://gitter.im/jlevy/the-art-of-command-line](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jlevy/the-art-of-command-line?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Haz una pregunta](https://img.shields.io/badge/%3f-Ask%20a%20Question-ff69b4.svg)](https://airtable.com/shrzMhx00YiIVAWJg)
+
+[![Unite al chat en  https://gitter.im/jlevy/the-art-of-command-line](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jlevy/the-art-of-command-line?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 - [Meta](#meta)
 - [Fundamentos](#fundamentos)
@@ -28,6 +30,7 @@ Parte de esta:
 [apareció](http://www.quora.com/What-are-the-most-useful-Swiss-army-knife-one-liners-on-Unix)
 en [Quora](http://www.quora.com/What-are-some-time-saving-tips-that-every-Linux-user-should-know),
 pero se ha movido desde entonces a Github, donde personas más talentosas que el autor han hecho numerosas mejoras.
+[**Por favor envía una pregunta**](https://airtable.com/shrzMhx00YiIVAWJg) Si tienes una pregunta acerca del terminal.
 [**Por favor contribuye**](/CONTRIBUTING.md) Si ves un error o algo que podría ser mejor!
 
 
