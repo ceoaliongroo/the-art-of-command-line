@@ -1,9 +1,11 @@
 🌍
-*[Čeština](README-cs.md) ∙ [Ελληνικά](README-el.md) ∙ [English](README.md) ∙ [Español](README-es.md) ∙ [Français](README-fr.md) ∙ [Italiano](README-it.md) ∙ [日本語](README-ja.md) ∙ [한국어](README-ko.md) ∙ [Português](README-pt.md) ∙ [Русский](README-ru.md) ∙ [Slovenščina](README-sl.md) ∙ [Українська](README-uk.md) ∙ [简体中文](README-zh.md) ∙ [繁體中文](README-zh-Hant.md)*
+*[Čeština](README-cs.md) ∙ [Deutsch](README-de.md) ∙ [Ελληνικά](README-el.md) ∙ [English](README.md) ∙ [Español](README-es.md) ∙ [Français](README-fr.md) ∙ [Indonesia](README-id.md) ∙ [Italiano](README-it.md) ∙ [日本語](README-ja.md) ∙ [한국어](README-ko.md) ∙ [polski](README-pl.md) ∙ [Português](README-pt.md) ∙ [Română](README-ro.md) ∙ [Русский](README-ru.md) ∙ [Slovenščina](README-sl.md) ∙ [Українська](README-uk.md) ∙ [简体中文](README-zh.md) ∙ [繁體中文](README-zh-Hant.md)*
 
 # L'art de la ligne de commande
 
-[![Join the chat at https://gitter.im/jlevy/the-art-of-command-line](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/jlevy/the-art-of-command-line?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Ask a Question](https://img.shields.io/badge/%3f-Ask%20a%20Question-ff69b4.svg)](https://airtable.com/shrzMhx00YiIVAWJg)
+
+[![Join the chat at https://gitter.im/jlevy/the-art-of-command-line](https://badges.gitter.im/Join%19Chat.svg)](https://gitter.im/jlevy/the-art-of-command-line?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 - [Méta](#méta)
 - [Notions de base](#notions-de-base)
@@ -12,7 +14,7 @@
 - [Débogage du système](#débogage-du-système)
 - [Unilignes](#unilignes)
 - [Obscures mais utiles](#obscures-mais-utiles)
-- [Uniquement OS X](#uniquement-os-x)
+- [Uniquement macOS](#uniquement-macos)
 - [Uniquement Windows](#uniquement-windows)
 - [Autres ressources](#autres-ressources)
 - [Avertissement](#avertissement)
@@ -27,6 +29,7 @@ Cette page n'est pas bien longue, mais si vous pouvez retenir et vous servir de 
 
 Ce document est le fruit du travail de [nombreux auteurs et traducteurs](AUTHORS.md).
 Une partie de celui-ci a été [initialement](http://www.quora.com/What-are-some-lesser-known-but-useful-Unix-commands) [publiée](http://www.quora.com/What-are-the-most-useful-Swiss-army-knife-one-liners-on-Unix) sur [Quora](http://www.quora.com/What-are-some-time-saving-tips-that-every-Linux-user-should-know), mais il se trouve maintenant sur GitHub, où des personnes plus compétentes que l'auteur originel ont apporté de nombreuses améliorations.
+[**N'hésitez pas à poser des questions**](https://airtable.com/shrzMhx00YiIVAWJg) sur la ligne de commande.
 [**Merci de contribuer**](/CONTRIBUTING.md) si vous voyez une erreur ou quelque chose qui pourrait être amélioré !
 
 
@@ -37,8 +40,8 @@ Contexte :
 - Ce guide est destiné aux débutants et aux utilisateurs chevronnés.
 Les objectifs sont l'*envergure* (tout est important), la *spécificité* (donner des exemples concrets des cas les plus courants) et la *concision* (éviter tout ce qui n'est pas essentiel et les digressions disponibles facilement ailleurs).
 Chaque astuce est indispensable dans certaines situations ou fait gagner beaucoup de temps par rapport aux solutions alternatives.
-- Il est écrit pour Linux, à l'exception des sections « [Uniquement OS X](#uniquement-os-X) » et « [Uniquement Windows](#uniquement-windows) ».
-Beaucoup d'items s'appliquent ou peuvent être installés sur d'autres Unices ou Mac OS (ou même Cygwin).
+- Il est écrit pour Linux, à l'exception des sections « [Uniquement macOS](#uniquement-macos) » et « [Uniquement Windows](#uniquement-windows) ».
+Beaucoup d'items s'appliquent ou peuvent être installés sur d'autres Unices ou macOS (ou même Cygwin).
 - L'accent est mis sur l'utilisation intéractive de Bash, bien que de nombreuses astuces s'appliquent aux autres shells et à l'écriture de scripts en Bash.
 - Il inclut les commandes « standard » d'Unix aussi bien que celles qui nécessitent l'installation de paquets spéciaux &mdash; tant qu'ils sont suffisamment importants pour mériter d'être mentionnés.
 
@@ -46,7 +49,7 @@ Remarques :
 
 - Afin que le guide tienne sur une seule page, du contenu est implicitement inclus par référence.
 Vous êtes suffisamment intelligents pour rechercher des renseignements ailleurs une fois que vous avez l'idée ou la commande à googler.
-Utilisez `apt-get`, `yum`, `dnf`, `pacman`, `pip` ou `brew` (selon votre distribution ou OS) pour installer de nouveaux programmes.
+Utilisez `apt`, `yum`, `dnf`, `pacman`, `pip` ou `brew` (selon votre distribution ou OS) pour installer de nouveaux programmes.
 - Allez sur [Explainshell](http://explainshell.com) pour obtenir de l'aide à propos des commandes, options, tubes, etc.
 
 
@@ -57,11 +60,14 @@ En fait, tapez `man bash` et parcourez toute la page&#8239;; elle est relativeme
 Les shells alternatifs peuvent être intéressants, mais Bash est puissant et disponible partout (apprendre *seulement* zsh, fish, etc., bien que cela soit tentant sur votre ordinateur portable, vous limite dans bien des situations, comme par exemple lors de l'utilisation de vrais serveurs).
 
 - Apprenez à bien utiliser au moins un éditeur en mode texte.
-Idéalement Vim (`vi`), car il n'a pas vraiment de concurrent lorsqu'il s'agit d'éditer inopinément un texte dans un terminal  (même si la plupart du temps vous utilisez Emacs, un gros EDI ou l'un de ces nouveaux éditeurs à la mode).
+L'éditeur `nano` est l'un des plus simples pour de l'édition simple (ouvrir, modifier, sauvegarder, rechercher).
+Cependant pour un usage avancé dans un terminal, rien ne remplace le vénérable Vim (`vi`), éditeur difficile à prendre en main, mais rapide et très complet.
+De nombreuses personnes utilisent également le classique Emacs, surtout pour d'importantes tâches d'édition (bien sûr, tout développeur moderne de logiciels travaillant sur un vaste projet n'utilise probablement pas un simple éditeur en mode texte et devrait donc aussi se familiariser avec des outils et des EDI graphiques modernes).
 
 - Sachez comment lire une documentation avec `man` (pour les curieux, `man man` liste les sections avec leur numéro, par exemple 1 pour les commandes «&nbsp;normales&nbsp;» , 5 pour les formats des fichiers et les conventions, et 8 pour tout ce qui concerne l'administration système).
 Trouvez les pages de manuel avec `apropos`.
 Sachez que certaines commandes ne sont pas des exécutables, mais des commandes internes de Bash et que vous pouvez obtenir de l'aide à leur sujet avec `help` et `help -d`.
+Utilisez `type command` pour déterminer si une commande est un exécutable, une commande interne du shell ou un alias.
 
 - Apprenez à rediriger les entrées et sorties au moyen de `>` et `<`, et à créer des tubes avec `|`.
 Sachez que `>` écrase le fichier de sortie et `>>` sert à ajouter.
@@ -77,7 +83,7 @@ Renseignez-vous sur stdout et stderr.
 Pour la gestion du système de fichiers&nbsp;: `df`, `mount`, `fdisk`, `mkfs`, `lsblk`.
 Apprenez ce qu'est un inode (`ls -i` ou `df -i`).
 
-- Les bases de l'administration réseau&nbsp;: `ip` ou `ifconfig`, `dig`.
+- Les bases de l'administration réseau&nbsp;: `ip`, `ifconfig`, `dig`, `traceroute` et `route`.
 
 - Apprenez à vous servir d'un logiciel de gestion de versions tel que `git`, et utilisez-le.
 
@@ -92,7 +98,7 @@ Assurez-vous d'avoir `pip` pour installer des outils en ligne de commande écrit
 
 - En Bash, utilisez **Tab** pour compléter les arguments ou lister toutes les commandes disponibles, et **ctrl-r** pour rechercher dans l'historique des commandes (tapez pour rechercher, appuyez sur **ctrl-r** plusieurs fois pour parcourir les différentes correspondances, appuyez sur **Enter** pour exécuter la commande trouvée ou sur la flèche droite pour l'éditer).
 
-- En Bash, utilisez **ctrl-w** pour effacer le mot précédent et **ctrl-u** pour effacer le contenu de la ligne jusqu'au curseur.
+- En Bash, utilisez **ctrl-w** pour effacer le mot précédent et **ctrl-u** pour effacer tout ce qui précède le curseur.
 Utilisez **alt-b** et **alt-f** pour se déplacer mot par mot, **ctrl-a** pour déplacer le curseur au début de la ligne, **ctrl-e** pour déplacer le curseur à la fin de la ligne, **ctrl-k** pour effacer depuis le curseur jusqu'à la fin de la ligne, **ctrl-l** pour effacer l'écran.
 Voir `man readline` pour la liste des raccourcis clavier par défault de Bash.
 Il y en a beaucoup.
@@ -102,10 +108,12 @@ Par exemple **alt-.** fait défiler les arguments précédents et **alt-*** dév
 
 - Pour éditer de longues commandes, après avoir configuré votre éditeur (par exemple `export EDITOR=vim`), **ctrl-x** **ctrl-e** (**escape-v** dans le style vi) ouvre l'éditeur pour éditer la commande courante.
 
-- Pour voir les commandes récentes, `history`.
-Il y a aussi beaucoup d'abréviations telles que `!$` (dernier argument) et `!!` (dernière commande), bien que celles-ci soient souvent remplacées par **ctrl-r** et **alt-.**.
+- Consultez les commandes récentes avec `history`.
+Faites `!n` pour rappeler la commande numéro `n`.
+Il y a aussi beaucoup d'autres abréviations, les plus utiles étant probalement `!$` pour le dernier argument et `!!` pour la dernière commande (voir la section « HISTORY EXPANSION » de la page de manuel).
+Cependant, celles-ci peuvent être aisément remplacées par **ctrl-r** et **alt-.**.
 
-- Placez-vous dans votre répertoire personnel avec `cd`. 
+- Placez-vous dans votre répertoire personnel avec `cd`.
 Accédez aux fichiers à partir de leurs chemins relatifs par rapport à votre répertoire personnel en préfixant ceux-ci avec `~` (p.&nbsp;ex. `~/.bashrc`).
 Dans les scripts shell, désignez le répertoire personnel par `$HOME`.
 
@@ -135,9 +143,9 @@ Pour la liste complète, consultez `man 7 signal`.
 
 - Utilisez `nohup` ou `disown` pour qu'un processus en arrière-plan reste actif indéfiniment.
 
-- Vérifiez quels sont les processus qui écoutent à l'aide de `netstat -lntp` ou `ss -plat` (pour TCP; ajoutez `-u` pour UDP).
+- Vérifiez quels sont les processus qui écoutent à l'aide de `netstat -lntp`, `ss -plat` (pour TCP; ajoutez `-u` pour UDP) ou `lsof -iTCP -sTCP:LISTEN -P -n` (qui fonctionne aussi sur macOS). 
 
-- Voyez également `lsof` pour la liste des *sockets* et fichiers ouverts.
+- Voyez également `lsof` et `fuser` pour la liste des *sockets* et fichiers ouverts.
 
 - Voyez `uptime` ou `w` pour savoir depuis combien de temps le système fonctionne.
 
@@ -176,21 +184,46 @@ Un exemple classique consiste à se déplacer temporairement dans un autre répe
       # continue dans le répertoire original
 ```
 
-- Remarquez qu'en Bash il y a de nombreux types d'expansion des variables.
-Vérifier l'existence d'une variable&nbsp;: `${name:?error message}`.
-Par exemple, si un script en Bash exige un unique argument, il vous suffit d'écrire `input_file=${1:?usage: $0 input_file}`.
-L'expansion arithmétique&nbsp;: `i=$(( (i + 1) % 5 ))`. Suites&nbsp;: `{1..10}`. Suppression de sous-chaînes&nbsp;: `${var%suffix}` et `${var#prefix}`. Par exemple,  si `var=foo.pdf`, alors `echo ${var%.pdf}.txt` affiche `foo.txt`.
+- Notez qu'en Bash, il existe de nombreux types d'expansions de variables. Pour vérifier l'existence d'une variable&nbsp;: `${name:?error message}`.
+Par exemple, si un script en Bash exige un unique argument, il suffit d'écrire `input_file=${1:?usage: $0 input_file}`.
+Pour utiliser une valeur par défaut si une variable est vide&nbsp;: `${name:-default}`.
+Si vous souhaitez ajouter un paramètre supplémentaire facultatif dans l'exemple précédent, vous pouvez écrire quelque chose comme `output_file=${2:-logfile}`.
+Si `$2` est omis et donc vide, `output_file` prendra la valeur `logfile`.
+L'évaluation arithmétique&nbsp;: `i=$(( (i+1) % 5)`.
+Les listes d'entiers&nbsp;: `{1..10}`
+Suppression de préfixes et de suffixes&nbsp;: `${var%suffix}` et `${var#prefix}`.
+Par exemple, si `var=foo.pdf`, alors `echo ${var%.pdf}.txt` affiche `foo.txt`.
 
 - L'expansion des accolades avec `{`...`}` évite de retaper des textes similaires et automatise les combinaisons d'éléments de listes.
 C'est utile dans des exemples comme  `mv foo.{txt,pdf} some-dir` (qui déplace les deux fichiers), `cp somefile{,.bak}` (équivalent à `cp somefile somefile.bak`) ou `mkdir -p test-{a,b,c}/subtest-{1,2,3}` (qui engendre toutes les combinaisons possibles et crée une arborescence de répertoires).
+L'expansion des accolades est effectuée avant toutes les autres expansions.
 
-- La sortie d'une commande peut être traitée comme un fichier à l'aide de `<(some command)`.
+- Les expansions sont exécutées dans l'ordre suivant&nbsp;: expansion des accolades, développement du tilde, remplacement des paramètres et des variables, évaluation arithmétique, substitution de commande (de la gauche vers la droite), découpage en mots, puis développement des chemins. 
+Par exemple, une liste telle que `{1..20}` ne peut s'exprimer avec des variables en utilisant `{$a..$b}`.
+À la place, utilisez `seq` ou une boucle `for`&nbsp;; par exemple, `seq $a $b` ou `for((i=a; i<=b; i++)); do ...; done`.
+
+- La sortie d'une commande peut être traitée comme un fichier à l'aide de `<(some command)` (substitution de processus).
 Par exemple, pour comparer le fichier local `/etc/hosts` avec un fichier distant&nbsp;:
 ```sh
-      diff /etc/hosts <(ssh somehost cat /etc/hosts)
+      diff /etc/hosts/ <(ssh somehost cat /etc/hosts)
 ```
 
-- Renseignez-vous à propos des « here documents » avec Bash, comme dans `cat <<EOF ...`.
+- Lorsque vous écrivez des scripts, vous pourriez avoir envie de placer votre code entre accolades.
+S'il manque l'accolade fermante, les scripts ne pourront s'exécuter à cause d'une erreur de syntaxe.
+C'est particulièrement utile pour des scripts mis à disposition sur le web, afin de prévenir leur exécution lorsqu'ils sont partiellement téléchargés.
+```bash
+{
+    # Votre code ici
+}
+```
+
+- Un «&nbsp;document intégré&nbsp;» permet de [rediriger plusieurs lignes en entrée](https://abs.traduc.org/abs-fr/ch19.html) comme si elles provenaient d'un fichier&nbsp;:
+```
+cat <<EOF
+entrée sur
+plusieurs lignes
+EOF
+```
 
 - En Bash, redirigez à la fois la sortie standard et la sortie des erreurs à l'aide de `some-command > logfile 2>&1` ou `some-command &>logfile`.
 Souvent, pour s'assurer qu'une commande ne laisse pas un descripteur de fichier ouvert sur l'entrée standard, l'attachant au terminal dans lequel vous vous trouvez, une bonne pratique consiste à ajouter `</dev/null`.
@@ -200,7 +233,7 @@ Pour des informations générales sur l'encodage, `man unicode`, `man utf-8` et 
 
 - Utilisez `screen` ou [`tmux`](https://tmux.github.io/) pour multiplexer une fenêtre de terminal, particulièrement utile pour des sessions SSH distantes, et pour détacher et rattacher une session.
 `byobu` peut améliorer screen ou tmux en fournissant plus d'informations et une gestion plus facile.
-Une alternative plus légère pour la persistance des sessions seulement est `dtach`.
+Une alternative plus légère pour la persistance des sessions seulement est [`dtach`](https://github.com/bogner/dtach/).
 
 - Il est utile de savoir comment créer un tunnel SSH avec `-L` ou `-D` (et occasionnellement `-R`), par exemple pour accéder à des sites web à partir d'un serveur distant.
 
@@ -231,9 +264,14 @@ Une alternative plus légère pour la persistance des sessions seulement est `dt
 
 - Créez un simple serveur web pour partager les fichiers du répertoire courant (et ses sous-répertoires) avec `python -m SimpleHTTPServer 7777` (port 7777 et Python 2)  et `python -m http.server 7777` (port 7777 et Python 3).
 
-- Pour exécuter une commande avec des privilèges, utilisez `sudo` (en tant que root) ou `sudo -u` (en tant qu'un autre utilisateur).
-Utilisez `su` ou `sudo bash` pour exécuter un shell sous cette utilisateur.
-Utilisez `su -` pour simuler une nouvelle connexion en tant que root ou un autre utilisateur.
+- Pour exécuter une commande avec les privilèges d'un autre utilisateur, utilisez `sudo`.
+Par défaut, cet autre utilisateur est *root*&#8239;; utilisez `-u` pour spécifier un autre utilisateur.
+Utilisez `-i` pour ouvrir une session en tant que cet autre utilisateur (on vous demandera *votre* mot de passe).
+
+- Pour basculer le shell sous un autre utilisateur, utilisez `su username` ou `su - username`.
+Incluez `-` pour obtenir le même environnement que lorsque cet utilisateur se connecte.
+Le nom d'utilisateur par défaut est *root*.
+Le système vous demandera le mot de passe *de l'utilisateur cible*.
 
 - Sachez que l'argument de la ligne de commande a une [taille limite de 128 Kio](https://wiki.debian.org/CommonErrorMessages/ArgumentListTooLong). L'erreur « Argument list too long » est fréquente avec les jokers qui reconnaissent un grand nombre de fichiers (quand cela se produit des alternatives comme `find` et `xargs` peuvent aider).
 
@@ -249,15 +287,17 @@ Par exemple,
 - Pour localiser un fichier par son nom dans le répertoire courant, `find . -iname '*something*'` (ou autres).
 Pour trouver un fichier n'importe où par son nom, utilisez `locate something` (mais n'oubliez pas que `updatedb` peut ne pas avoir indexé les fichiers récemment créés).
 
-- Pour une recherche à travers les fichiers sources ou fichiers de données (plus poussée que `grep -r`), utilisez [`ag`](https://github.com/ggreer/the_silver_searcher).
+- Pour effectuer une recherche parmi des fichiers sources ou des fichiers de données, il existe des alternatives plus avancées ou plus rapides que `grep -r`, parmi lesquels (en gros du plus ancien au plus récent) [`ack`](https://github.com/beyondgrep/ack2), [`ag`](https://github.com/ggreer/the_silver_searcher) (« *the silver searcher* ») et [`rg`](https://github.com/BurntSushi/ripgrep) (ripgrep).
 
 - Pour convertir du HTML en texte brut : `lynx -dump -stdin`.
 
 - Pour convertir du Markdown, du HTML et toutes sortes de formats texte, essayez [`pandoc`](http://pandoc.org).
+Par exemple, pour convertir un document Markdown au format Word : `pandoc README.md --from markdown --to docx -o temp.docx`
 
 - Si vous devez manipuler du XML, l'ancien `xmlstarlet` marche bien.
 
 - Pour le JSON, utilisez [`jq`](http://stedolan.github.io/jq/).
+Voir également [`jid`](https://github.com/simeji/jid) and [`jiq`](https://github.com/fiatjaf/jiq) pour une utilisation intéractive.
 
 - Pour le YAML, utilisez [`shyaml`](https://github.com/0k/shyaml).
 
@@ -275,6 +315,8 @@ Beaucoup de personnes utilisent `cut` mais oublient `join`.
 
 - Connaissez `tee` pour copier depuis stdin vers un fichier ou vers stdout, comme dans `ls -al | tee file.txt`.
 
+- Pour des calculs plus complexes, incluant les regroupements, les inversions de champs et des calculs statistiques, considérez [`datamash`](https://www.gnu.org/software/datamash/).
+
 - Sachez que la locale affecte de nombreux outils en ligne de commande de manière subtile, comme l'ordre pour les tris (collation) et les performances.
 La plupart des installateurs Linux définissent la variable `LANG` ou d'autres variables locales d'environnement pour configurer une locale telle que US English.
 Mais ayez à l'esprit que le tri sera modifié si vous changez la locale.
@@ -284,6 +326,8 @@ Dans certains cas (tels que les opérations concernant les ensembles et l'unicit
 - Vous pouvez modifier l'environnement d'une commande particulière en préfixant son invocation par l'affectation de variables, comme dans `TZ=Pacific/Fiji date`.
 
 - Apprenez `awk` et `sed` pour de l'analyse de données élémentaire.
+Voir la section [Unilignes](#unilignes) pour des exemples.
+
 Par exemple, pour effectuer la somme de tous les nombres de la troisième colonne d'un fichier texte&nbsp;: `awk '{ x += $3 } END { print x}'`.
 C'est probablement trois fois plus rapide et trois fois plus petit que son équivalent en Python.
 
@@ -299,7 +343,6 @@ C'est probablement trois fois plus rapide et trois fois plus petit que son équi
     repren --full --preserve-case --from foo --to bar .
     # Restaure des fichiers de sauvegarde à l'aide de la
     # substitution whatever.bak -> whatever :
-    repren --renames --from '(.*)\.bak' --to '\1' *.bak
     # Même chose que ci-dessus avec rename s'il est disponible :
     rename 's/\.bak$//' *.bak
 ```
@@ -311,6 +354,8 @@ Il est aussi l'un des outils [les plus rapides](https://web.archive.org/web/2013
 ```sh
     mkdir empty && rsync -r --delete empty/ some-dir && rmdir some-dir
 ```
+
+- Pour surveiller l'état d'avancement d'une copie de fichiers, utilisez [`pv`](http://www.ivarch.com/programs/pv.shtml), [`pycp`](https://github.com/dmerejkowsky/pycp), [`pmonitor`](https://github.com/dspinellis/pmonitor), [`progress`](https://github.com/Xfennec/progress), `rsync --progress`, ou `dd status=progress` dans le cas d'une copie par blocs.
 
 - Utilisez `shuf` pour mélanger ou sélectionner aléatoirement des lignes d'un fichier.
 
@@ -335,17 +380,23 @@ Utilisez `vimdiff` pour comparer et éditer des fichiers.
 
 - Pour effectuer des différences entre des fichiers binaires (compression différentielle), utilisez `xdelta3`.
 
-- Pour changer l'encodage d'un texte, essayer `iconv`, ou `uconv` pour un usage plus sophistiqué : il permet quelques trucs avancés avec l'Unicode.
-Par exemple, cette commande met en minuscules et retire tous les accents (en les développant et les écartant)&nbsp;:
+- Pour changer l'encodage d'un texte, essayer `iconv`, ou `uconv` pour un usage plus avancée&nbsp;: il permet quelques trucs avancés avec l'Unicode.
+Par exemple&nbsp;:
 ```sh
-      uconv -f utf-8 -t utf-8 -x '::Any-Lower; ::Any-NFD; [:Nonspacing Mark:] >; ::Any-NFC; ' < input.txt > output.txt
+      # Affiche les codes hexadécimaux et les noms des caractères (utile pour déboguer) : 
+      uconv -f utf-8 -t utf-8 -x '::Any-Hex;' < input.txt
+      uconv -f utf-8 -t utf-8 -x '::Any-Name;' < input.txt
+      # Convertit en minuscule et supprime les accents :
+      uconv -f utf-8 -t utf-8 -x '::Any-Lower; ::Any-NFD; [:Nonspacing Mark:] >; 
+      ::Any-NFC;' < input.txt > output.txt
 ```
 
 - Pour découper des fichiers en morceaux, regardez `split` pour un découpage en morceaux de taille donnée et `csplit` pour un découpage en morceaux délimités par un motif.
 
-- Pour manipuler des dates et des heures, utilisez `dateadd`, `datediff`, `strptime`, etc. fournis par [`dateutils`](http://www.fresse.org/dateutils/).
+- Date et heure&nbsp;: pour obtenir la date et l'heure courantes au format [ISO 8601](https://fr.wikipedia.org/wiki/ISO_8601), utilisez `date -u +"%Y-%m-%dT%H:%M:%SZ"` (d'autres options [sont](https://stackoverflow.cmm/questions/7216358/date-command-on-os-x-doesnt-have-iso-8601-i-option) [problématiques](https://unix.stackexchange.com/questions/164826/date-command-iso-8601-option)).
+Pour manipuler des dates et des heures, utilisez `dateadd`, `datediff`, `strptime`, etc. fournis par [`dateutils`](http://www.fresse.org/dateutils/).
 
-- Utilisez `zless`, `zmore`, `zcat` et `zgrep` pour opérer sur des fichiers compressés.
+- Utilisez `zless`, `zmore`, `zcat` et `zgrep` pour travailler sur des fichiers compressés.
 
 - Les attributs d'un fichier peuvent être modifiés avec `chattr` et proposent une alternative de plus bas niveau aux permissions d'accès aux fichiers.
 Par exemple, l'attribut *immutable* protège un fichier contre toute suppression accidentelle: `sudo chattr +i /critical/directory/or/file`.
@@ -355,6 +406,8 @@ Par exemple, l'attribut *immutable* protège un fichier contre toute suppression
     getfacl -R /some/path > permissions.txt
     setfacl --restore=permissions.txt
 ```
+
+- Pour créer rapidement un fichier vide, utilisez `truncate` (crée un [fichier creux](https://en.wikipedia.org/wiki/Sparse_file)), `fallocate` (systèmes de fichiers ext4, XFS, Btrfs et OCFS2), `xfs_mkfile` (pour presque tous les systèmes de fichiers, disponible dans le paquet xfsprogs) ou `mkfile` (pour les systèmes de type Unix comme Solaris ou Mac OS X).
 
 ## Débogage du système
 
@@ -375,32 +428,33 @@ En particulier, ayez à l'esprit que la valeur du « cache » est la mémoire ut
 - Le système de debogage de Java est une autre paire de manche, cependant un truc simple sur la JVM d'Oracle et quelques autres JVMs consiste à exécuter `kill -3 <pid>` pour obtenir une trace complète des appels et une empreinte de la mémoire (y compris des détails sur le ramasse-miettes qui peuvent être hautement instructifs) dans stderr ou des fichiers journaux.
 Les commandes `jps`, `jstat`, `jstack` et `jmap` de la JDK sont utiles. L'[outil SJK](https://github.com/aragozin/jvm-tools) est plus avancé.
 
-- Utilisez `mtr` comme un `traceroute` amélioré pour identifier les problèmes de réseau.
+- Utilisez [`mtr`](http://www.bitwizard.nl/mtr/) comme un `traceroute` amélioré pour identifier les problèmes de réseau.
 
-- Pour déterminer les raisons pour lesquelles un disque est plein, `ncdu` permet de gagner du temps par rapport aux commandes habituelles telles que `du -sh *`.
+- Pour déterminer les raisons pour lesquelles un disque est plein, [`ncdu`](https://dev.yorhel.nl/ncdu) permet de gagner du temps par rapport aux commandes habituelles telles que `du -sh *`.
 
-- Pour trouver quel socket ou processus utilise la bande passante, essayez `iftop` ou `nethogs`.
+- Pour trouver quel socket ou processus utilise la bande passante, essayez [`iftop`](http://www.ex-parrot.com/~pdw/iftop/) ou [`nethogs`](https://github.com/raboof/nethogs).
 
 - L'outil `ab` (fourni avec Apache) est utile pour une vérification rapide et grossière des performances d'un serveur web.
 Pour des tests de charge plus complexes, essayez `siege`.
 
-- Pour du debogage réseau plus sérieux : `wireshark`, `tshark` ou `ngrep`.
+- Pour du debogage réseau plus sérieux : [`wireshark`](https://wireshark.org/), [`tshark`](https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html) ou [`ngrep`](http://ngrep.sourceforge.net/).
 
 - Sachez utiliser `strace` et `ltrace`.
-Ces commandes peuvent être utiles si un programme fonctionne mal ou plante et que vous n'en connaissez pas la raison, ou si vous voulez vous faire une idée des performances.
-Remarquez l'option de profilage (`-c`) et la possibilité de les attacher à un processus en cours d'exécution (`-p`).
+Ces commandes peuvent être utiles si un programme fonctionne mal ou plante et que vous n'en connaissez pas la raison, ou si vous voulez vous faire une idée de ses performances.
+Remarquez l'option de profilage (`-c`) et la possibilité de s'attacher à un processus en cours d'exécution (`-p`).
+Utilisez l'option `-f` pour ne pas manquer les appels des processus enfants.
 
-- Connaissez `ldd` pour afficher les bibliothèques partagées, etc.
+- Connaissez `ldd` pour afficher les bibliothèques partagées, mais [ne l'utilisez jamais sur des fichiers qui ne sont pas dignes de confiance](http://www.catonmat.net/blog/ldd-arbitrary-code-execution/).
 
 - Sachez comment vous connecter à un processus en cours d'exécution avec `gdb` et récupérer la trace des appels.
 
 - Utilisez `/proc`. C'est parfois incroyablement utile pour résoudre des problèmes en live.
 Exemples&nbsp;: `/proc/cpuinfo`, `/proc/meminfo`, `/proc/cmdline`, `/proc/xxx/cwd`, `/proc/xxx/exe`, `/proc/xxx/fd`, `/proc/xxx/smaps` (où `xxx` est l'identifiant du processus ou pid).
 
-- Pour comprendre pourquoi quelque chose a mal tourné antérieurement, `sar` peut-être très utile.
-Elle fournit un historique concernant l'usage du CPU, de la mémoire, du réseau, etc.
+- Pour comprendre pourquoi quelque chose a mal tourné antérieurement, [`sar`](http://sebastien.godard.pagesperso-orange.fr/) peut-être très utile.
+Il fournit un historique concernant l'usage du CPU, de la mémoire, du réseau, etc.
 
-- Pour une analyse plus approfondie du système et de ses performances, regardez `stap` ([SystemTap](https://sourceware.org/systemtap/wiki)), [`perf`](https://en.wikipedia.org/wiki/Perf_(Linux) et [`sysdig`](https://github.com/draios/sysdig).
+- Pour une analyse plus approfondie du système et de ses performances, regardez `stap` ([SystemTap](https://sourceware.org/systemtap/wiki)), [`perf`](https://en.wikipedia.org/wiki/Perf_%28Linux%29) et [`sysdig`](https://github.com/draios/sysdig).
 
 - Vérifiez quel OS vous utilisez avec `uname` ou `uname -a` (information général sur la version d'Unix et du noyau) ou `lsb_release -a` (informations sur la distribution Linux).
 
@@ -419,9 +473,9 @@ Supposez que `a` et `b` soient des fichiers texte ne contenant pas de lignes ré
 C'est rapide et fonctionne sur des fichiers de taille quelconque jusqu'à plusieurs gigaoctets (le tri n'est pas limité par la capacité mémoire bien que vous puissiez avoir besoin d'utiliser l'option `-T` si `/tmp` est sur une petite partition racine).
 Voyez aussi la remarque à propos de `LC_ALL` ci-dessus et l'option `-u` de `sort` (omise ci-dessous pour plus de clarté).
 ```sh
-    cat a b | sort | uniq > c       # c est l'union de a et b
-    cat a b | sort | uniq -d > c    # c est l'intersection de a et b
-    cat a b b | sort | uniq -u > c  # c est la difference  a - b
+    sort a b | uniq > c   # c is a union b
+    sort a b | uniq -d > c   # c is a intersect b
+    sort a b b | uniq -u > c   # c is set difference a - b
 ```
 
 - Utilisez `grep . *` pour inspecter rapidement les contenus des fichiers d'un repértoire (chaque ligne est précédé du nom du fichier) ou `head -100 *` (chaque fichier a un titre).
@@ -440,7 +494,7 @@ Cela peut être utile pour des répertoires remplis de fichiers de configuration
 - Supposons que vous ayez un fichier texte comme un fichier journal de serveur web et q'une certaine valeur, comme un paramètre `acct_id` présent dans l'URL, figure à certaines lignes.
 Si vous voulez un décompte du nombre de requêtes pour chaque valeur de `acct_id`&nbsp;:
 ```sh
-    cat access.log | egrep -o 'acct_id=[0-9]+' | cut -d= -f2 | sort | uniq -c | sort -rn
+    egrep -o 'acct_id=[0-9]+' access.log | cut -d= -f2 | sort | uniq -c | sort -rn
 ```
 
 - Pour surveiller en permanence tout changement, utilisez `watch`, par exemple vérifiez les modifications dans les fichiers d'un répertoire avec `watch -d -n 2 'ls -rtlh | tail'` ou surveillez les paramètres de votre réseau tout en dépannant la configuration de votre wifi avec `watch -d -n 2 ifconfig`.
@@ -449,10 +503,11 @@ Si vous voulez un décompte du nombre de requêtes pour chaque valeur de `acct_i
 ```sh
      function taocl() {
         curl -s https://raw.githubusercontent.com/jlevy/the-art-of-command-line/master/README.md |
+          sed '/cowsay[.]png/d' |
           pandoc -f markdown -t html |
           xmlstarlet fo --html --dropdtd |
           xmlstarlet sel -t -v "(html/body/ul/li[count(p)>0])[$RANDOM mod last()+1]" |
-          xmlstarlet unesc | fmt -80
+          xmlstarlet unesc | fmt -80 | iconv -t US
       }
 ```
 
@@ -521,15 +576,11 @@ Si vous voulez un décompte du nombre de requêtes pour chaque valeur de `acct_i
 
 - `watch` : exécute une commande périodiquement, affiche le résultat et surligne les différences entre les résultats.
 
+- [`when-changed`](https://github.com/joh/when-changed) : exécute n'importe quelle commande donnée à chaque fois qu'un fichier est modifié. Voir également `inotifywait` et `entr`. 
+
 - `tac` : affiche des fichiers à l'envers.
 
-- `shuf` : sélection aléatoire de lignes d'un fichier.
-
 - `comm` : compare ligne à ligne deux fichiers triés.
-
-- `pv` : surveille la progression des données à travers un tube.
-
-- `hd`, `hexdump`, `xxd`, `biew` et `bvi` : dump et édition de fichiers binaires.
 
 - `strings` : extrait du texte de fichiers binaires.
 
@@ -545,25 +596,25 @@ Si vous voulez un décompte du nombre de requêtes pour chaque valeur de `acct_i
 
 - `apg` : génère des mots de passe aléatoires.
 
-- `7z` : compresse des fichiers avec taux de compression élevé.
+- `xz` : compresse des fichiers avec taux de compression élevé.
 
 - `ldd` : affiche des informations sur les bibliothèques partagées.
 
 - `nm` : affiche les symboles des fichiers objets.
 
-- `ab` : mesure les performances de serveurs web.
+- `ab` ou [`wrk`](https://github.com/wg/wrk) : mesure les performances de serveurs web.
 
 - `strace`: trace les appels système.
 
-- `mtr`: un traceroute amélioré pour débugguer un réseau.
+- [`mtr`](http://www.bitwizard.nl/mtr/): un traceroute amélioré pour débugguer un réseau.
 
 - `cssh` : visual concurrent shell
 
 - `rsync` : synchronise des fichiers et des dossiers via SSH ou localement.
 
-- `wireshark` et `tshark`: capture de paquets et dépannage réseau.
+- [`wireshark`](https://wireshark.org/) et [`tshark`](https://www.wireshark.org/docs/wsug_html_chunked/AppToolstshark.html): capture de paquets et dépannage réseau.
 
-- `ngrep` : grep pour les couches réseaux.
+- [`ngrep`](http://ngrep.sourceforge.net/) : grep pour les couches réseaux.
 
 - `host` et `dig`: interroge les serveurs DNS.
 
@@ -587,9 +638,9 @@ Si vous voulez un décompte du nombre de requêtes pour chaque valeur de `acct_i
 
 - `id` : affiche les informations sur un utilisateur et ses groupes.
 
-- `sar` : statistiques sur l'activité du système
+- [`sar`](http://sebastien.godard.pagesperso-orange.fr/) : statistiques sur l'activité du système
 
-- `iftop` ou `nethogs` : utilisation du réseau par un socket ou un processus.
+- [`iftop`](http://www.ex-parrot.com/~pdw/iftop/) ou [`nethogs`](https://github.com/raboof/nethogs) : utilisation du réseau par un socket ou un processus.
 
 - `ss` : statistiques relatives aux sockets.
 
@@ -608,41 +659,64 @@ Si vous voulez un décompte du nombre de requêtes pour chaque valeur de `acct_i
 - `fortune`, `ddate` et `sl` : euh, bon, seulement si vous estimez que les locomotives à vapeur et les citations de Jean-Claude Van Damme sont « utiles ».
 
 
-## Uniquement OS X
+## Uniquement macOS
 
-Ce qui suit ne s'applique *qu'*à Mac OS.
+Ce qui suit ne s'applique *qu'*à macOS.
 
 - Gestion des paquets avec `brew` (Homebrew) ou `port` (MacPorts).
-Ceux-ci peuvent être utilisés pour installer sur Mac OS la plupart des commandes mentionnées ci-dessus.
+Ceux-ci peuvent être utilisés pour installer sur macOS la plupart des commandes mentionnées ci-dessus.
 
 - Copier la sortie de n'importe quelle commande dans une application de bureau avec `pbcopy` et coller l'entrée d'une commande avec `pbpaste`.
 
-- Pour permettre à la touche Option de fonctionner comme la touche Alt dans le terminal de Mac OS (comme dans les commandes **alt-b**, **alt-f**, etc), allez dans Préférences -> Profils -> Clavier et sélectionner « Choisir la touche Option comme touche virtuelle ».
+- Pour permettre à la touche Option de fonctionner comme la touche Alt dans le terminal de macOS (comme dans les commandes **alt-b**, **alt-f**, etc), allez dans Préférences -> Profils -> Clavier et sélectionner « Choisir la touche Option comme touche virtuelle ».
 
 - Pour ouvrir un fichier avec une application de bureau, utilisez `open` ou `open -a /Applications/Whatever.app`.
 
 - Spotlight&nbsp;: recherche de fichiers avec `mdfind` et affichage des métadonnées (telles que les informations EXIF d'une photo) avec `mdls`.
 
-- Ayez à l'esprit que Mac OS dérive du système Unix BSD et que beaucoup de commandes (par exemples `ps`, `ls`, `tail`, `awk`, `sed`) présentent de légères différences avec leurs versions pour Linux, qui lui est largement influencé par System V et les outils GNU.
+- Ayez à l'esprit que macOS dérive du système Unix BSD et que beaucoup de commandes (par exemple `ps`, `ls`, `tail`, `awk`, `sed`) présentent de légères différences avec leurs versions pour Linux, qui lui est largement influencé par System V et les outils GNU.
 Vous pouvez souvent faire la distinction grâce à l'en-tête « BSD General Commands Manual » dans les pages de manuel.
 Dans certains cas, les versions GNU peuvent également être installées (telles que `gawk` et `gsed` pour GNU awk et GNU sed).
 Pour écrire des scripts Bash multi-plateformes évitez d'utiliser de telles commandes (par exemple, envisagez d'utiliser Python ou Perl) ou alors testez-les soigneusement.
 
-- Pour obtenir des informations sur la version de Mac OS, utilisez `sw_vers`.
+- Pour obtenir des informations sur la version de macOS, utilisez `sw_vers`.
 
 
 ## Uniquement Windows
 
+Ce qui suit ne concerne que Windows.
+
+### Différentes manières d'obtenir les outils Unix sous Windows
+
 - Installez [Cygwin](http://cygwin.com) pour bénéficier de la puissance du shell Unix sous Microsoft Windows.
 La majorité de ce qui est décrit dans ce document fonctionnera *out of the box*.
 
-- Installez des programmes Unix supplémentaires à l'aide du gestionnaire de paquets de Cygwin. 
+- Sous Windows 10, [Windows Subsystem for Linux (WSL)](https://msdn.microsoft.com/commandline/wsl/about) fournit un environnement Bash avec les utilitaires en ligne de commandes d'Unix.
+
+- Si vous êtes surtout intéressés par les outils de developpement GNU (comme GCC) sur Windows, jetez un œil à [MinGW](http://www.mingw.org/) et à son package [MSYS](http://www.mingw.org/wiki/msys) qui fournit des utilitaires tels que bash, gawk, make et grep.
+MSYS ne dispose pas de toutes les fonctionnalités de Cygwin.
+MinGW est particulièrement utile pour porter sous Windows des outils Unix.
+
+- Une autre manière d'obtenir le *look and feel* d'Unix sous Windows est d'utiliser [Cash](https://github.com/dthree/cash).
+Notez que très peu de commandes Unix et d'options de ligne de commande sont disponibles dans cet environnement.
+
+### Outils en ligne de commande utiles pour Windows
+
+- Vous pouvez accomplir et scripter la plupart des tâches d'administration système de Windows depuis la ligne de commande à l'aide de `wmic`.
+
+- Parmi les outils réseaux en ligne de commande nativement disponibles sous windows que vous devriez trouver utiles, on trouve `ping`, `ipconfig`, `tracert` et `netstat`.
+
+- Vous pouvez effectuer [de nombreuses tâches sous Windows](http://www.thewindowsclub.com/rundll32-shortcut-commands-windows) en invoquant la commande `Rundll32`.
+
+### Trucs et astuces à propos de Cygwin
+
+- Installez des programmes Unix supplémentaires à l'aide du gestionnaire de paquets de Cygwin.
 
 - Utilisez `mintty` comme fenêtre de ligne de commande.
 
 - Accédez au presse-papier de Windows par `/dev/clipboard`.
 
-- Exécutez `cygstart` pour ouvrir un fichier quelconque à l'aide de son application enregistrée.
+- Exécutez `cygstart` pour ouvrir un fichier quelconque avec l'application associée.
 
 - Accédez à la base de registres de Windows avec `regtool`.
 
@@ -650,17 +724,14 @@ La majorité de ce qui est décrit dans ce document fonctionnera *out of the box
 Effectuez des conversions entre les deux types de chemin avec l'utilitaire `cygpath`.
 C'est particulièrement utile pour invoquer des programmes Windows dans les scripts.
 
-- Vous pouvez accomplir et scripter la plupart des tâches d'administration système de Windows depuis la ligne de commande en apprenant et en utilisant `wmic`.
-
-
 ## Autres ressources
 
 - [awesome-shell](https://github.com/alebcay/awesome-shell)&nbsp;: une liste organisée d'outils et de ressources pour le shell.
-- [awesome-osx-command-line](https://github.com/herrbischoff/awesome-osx-command-line)&nbsp;: un guide plus approfondi sur la ligne de commande pour Mac OS.
+- [awesome-osx-command-line](https://github.com/herrbischoff/awesome-osx-command-line)&nbsp;: un guide plus approfondi sur la ligne de commande pour macOS.
 - [Strict mode](http://redsymbol.net/articles/unofficial-bash-strict-mode/)&nbsp;: pour écrire de meilleurs scripts shell.
 - [shellcheck](https://github.com/koalaman/shellcheck)&nbsp;: un outil d'analyse statique des scripts shell. L'équivalent de lint pour bash, sh et zsh.
 - [Filenames and Pathnames in Shell](http://www.dwheeler.com/essays/filenames-in-shell.html)&nbsp;: les points de détail, malheureusement compliqués, sur la manière de manipuler correctement les noms de fichiers dans les scripts shell.
-
+- [Data Science at the Command Line](http://datascienceatthecommandline.com/#tools)&nbsp;: d'autres outils en ligne de commande, utiles en science des données et discutés dans le livre du même nom.
 
 ## Avertissement
 
